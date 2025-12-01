@@ -16,24 +16,31 @@ const nextBtn = document.querySelector("#nextBtn");
 let currentIndex = 0;
 let currentMedia = [];
 
+/* Fonction pour fermer le modal */
 function closeModal() {
-    carouselInner.innerHTML = "";
+    const iframes = carouselInner.querySelectorAll("iframe");
+    iframes.forEach(iframe => {
+        const src = iframe.src;
+        iframe.src = src; 
+    });
+
     modal.classList.add("hidden");
 }
 
+/* Event pour fermer modal */
 document.querySelector("#closeModal").addEventListener("click", closeModal);
 modal.addEventListener("click", (e) => {
     if (e.target === modal) closeModal();
 });
 
+/* Fetch des projets */
 fetch("./scripts/projects.json")
     .then(res => res.json())
     .then(data => {
-        data.forEach(project => {
-            createProjectCard(project);
-        });
+        data.forEach(project => createProjectCard(project));
     });
 
+/* Création des cartes */
 function createProjectCard(project) {
     const card = document.createElement("div");
     card.className =
@@ -56,37 +63,36 @@ function createProjectCard(project) {
     if (project.category === "audiovisuel") containerAudiovisual.appendChild(card);
 }
 
+/* Ouverture du modal */
 function openModal(project) {
     modalTitle.textContent = project.title;
     modalDescription.textContent = project.description;
     modalYear.textContent = project.year;
     modalRole.textContent = project.role;
 
-    // Gérer le lien du projet
-    if (project.link) {
+    // Gestion du lien
+    if (project.link && project.link !== "") {
         modalLink.href = project.link;
-        modalLink.style.display = "inline-block";
+        modalLink.classList.remove("hidden");
     } else {
-        modalLink.style.display = "none";
+        modalLink.classList.add("hidden");
     }
 
-    // Préparer le carrousel
     carouselInner.innerHTML = "";
+
     currentMedia = project.media.map(item => {
         let element;
-
         if (item.includes("youtube.com/embed/")) {
             element = document.createElement("iframe");
             element.src = item;
             element.setAttribute("frameborder", "0");
             element.setAttribute("allowfullscreen", true);
-            element.className = "carousel-media w-full h-[500px] sm:h-[600px]";
+            element.className = "carousel-media iframe"; 
         } else {
             element = document.createElement("img");
             element.src = item;
-            element.className = "carousel-media w-full h-96 object-cover";
+            element.className = "carousel-media img"; 
         }
-
         return element;
     });
 
@@ -95,11 +101,13 @@ function openModal(project) {
 
     modal.classList.remove("hidden");
 }
+
+/* Affichage média */
 function showMedia(index) {
     carouselInner.innerHTML = "";
     carouselInner.appendChild(currentMedia[index]);
 
-    // Masquer ou afficher les flèches selon le type de média
+    // Cacher les flèches pour les vidéos
     if (currentMedia[index].tagName === "IFRAME") {
         prevBtn.style.display = "none";
         nextBtn.style.display = "none";
@@ -109,7 +117,7 @@ function showMedia(index) {
     }
 }
 
-// BOUTONS CARROUSEL
+/* Navigation carousel */
 prevBtn.addEventListener("click", () => {
     if (currentMedia.length === 0) return;
     currentIndex = (currentIndex - 1 + currentMedia.length) % currentMedia.length;
