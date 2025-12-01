@@ -8,7 +8,7 @@
     "role": "Monteur de la vidéo",
     "cover": "images/projets/audiovisuel/smokingSnakes/cover.png",
     "media": [
-      "https://youtu.be/7xa5wHli_Bo"
+      "https://www.youtube.com/embed/7xa5wHli_Bo"
     ],
     "link": null
   },
@@ -42,4 +42,5 @@
     ],
     "link": null
   }
+
 ]
