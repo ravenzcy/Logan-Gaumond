@@ -18,11 +18,19 @@ let currentIndex = 0;
 let currentMedia = [];
 
 function closeModal() {
-    // Stopper toutes les vidéos dans le modal
+    // Stopper les vidéos auto-hébergées
     const videos = carouselInner.querySelectorAll("video");
     videos.forEach(video => {
         video.pause();
         video.currentTime = 0;
+    });
+
+    // Stopper les vidéos YouTube/iFrame en rechargeant la source
+    const iframes = carouselInner.querySelectorAll("iframe");
+    iframes.forEach(iframe => {
+        // Sauvegarde la source et la réinitialise pour arrêter la lecture
+        const src = iframe.src;
+        iframe.src = src; 
     });
 
     // Cacher le modal
@@ -80,11 +88,12 @@ function openModal(project) {
     carouselInner.innerHTML = "";
     currentMedia = project.media.map(item => {
         let element;
-        if (item.endsWith(".mp4")) {
-            element = document.createElement("video");
+        if (item.includes("youtube.com/embed/")) {
+            element = document.createElement("iframe");
             element.src = item;
-            element.controls = true;
-            element.className = "carousel-media";
+            element.setAttribute("frameborder", "0");
+            element.setAttribute("allowfullscreen", true);
+            element.className = "carousel-media w-full h-96";
         } else {
             element = document.createElement("img");
             element.src = item;
