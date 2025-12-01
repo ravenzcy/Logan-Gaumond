@@ -1,0 +1,166 @@
+/* Variables*/
+:root {
+    --dark: #121212;
+    --darkAccent: #1e1e1e;
+    --bright: #ffffff;      
+    --accent: #9b5de5;   
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/*scoll bar personalisé*/
+*::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+*::-webkit-scrollbar-track {
+    background: var(--darkAccent);
+    border-radius: 5px;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #9b5de5;
+    border-radius: 5px; 
+    border: 2px solid var(--darkAccent);
+}
+
+*::-webkit-scrollbar-thumb:hover {
+    background-color: rgb(130, 81, 190);
+}
+/*pour fire fox*/
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #9b5de5 var(--darkAccent);
+}
+
+/* section header */
+
+.headerBackground {
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+        -45deg,
+        rgba(255,255,255,0.03) 0px,
+        rgba(255,255,255,0.03) 2px,
+        transparent 2px,
+        transparent 10px
+    );
+    background-color: #0d0d0d;
+    z-index: -1;
+    animation: moveLines 15s linear infinite;
+}
+
+@keyframes moveLines {
+    from { background-position: 0 0; }
+    to { background-position: 1000px 0; }
+}
+
+/* Animation de la barre de frappe */
+.typing {
+    display: inline-block;
+    background-color: transparent;
+    color: var(--accent);
+    margin-left: 4px;
+    animation: blink 0.8s infinite;
+}
+
+@keyframes blink {
+    0%, 50% { opacity: 1; }
+    50.01%, 100% { opacity: 0; }
+}
+
+/* section introduction */
+
+
+
+/* Bouton de projet animé */
+@keyframes fadeSlide {
+    0% {
+        opacity: 0;
+        transform: translateX(-25px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeDelay {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.animate-fadeSlide {
+    animation: fadeSlide 0.9s ease-out forwards;
+}
+
+.animate-fadeDelay {
+    animation: fadeDelay 1.4s ease-out forwards;
+    animation-delay: 0.6s;
+}
+
+/* modal */
+
+
+#projectModal {
+    overflow-y: hidden;
+}
+
+#modalContent {
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+#carouselInner {
+    width: 100%;
+    max-height: 50vh;
+}
+
+
+.carousel-media {
+    width: 100%;
+    max-height: 50vh;
+    object-fit: contain;
+    margin-bottom: 1rem;
+}
+
+#modalDescription {
+    word-break: break-word; 
+}
+
+#prevBtn, #nextBtn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #9b5de5;
+    color: white;
+    font-size: 2rem;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 50;
+    transition: all 0.3s ease;
+    padding: 0;
+    border: none;
+    line-height: normal;
+}
+
+#prevBtn:hover, #nextBtn:hover {
+    background-color: rgb(130, 81, 190);
+    transform: translateY(-50%) scale(1.2);
+}
+
+#closeModal{
+    z-index: 30;
+}

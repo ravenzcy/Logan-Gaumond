@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio de Logan Gaumond"/>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/build.css">
+    <script src="scripts/typingAnimation.js" defer></script>
+    <script src="scripts/main.js" defer></script>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <title>Logan Gaumond</title>
+</head>
+
+<body class="bg-gray-900 text-[#e3e3e3] font-[Poppins]">
+    
+    <!-- header -->
+    <header class="min-h-screen flex items-center px-16 overflow-hidden">
+        <div id="animatedLines" class="headerBackground"></div>
+
+        <div class="flex flex-wrap items-center justify-between w-full">
+
+            <div class="basis-[45%] min-w-[300px] space-y-5">
+
+                <h1 class="text-4xl sm:text-6xl font-bold leading-tight opacity-0 translate-y-5 animate-fadeSlide">
+                    Salut, moi c’est <span class="text-[#9b5de5]">Logan</span>
+                </h1>
+
+                <h2 class="text-3xl text-gray-400 opacity-0 animate-fadeDelay">
+                    Mes intêrets sont : <span class="typedText"></span><span class="typing">|</span>
+                </h2>
+
+            </div>
+
+        </div>
+    </header>
+
+    
+    <main class="w-[80%] mx-auto space-y-40">
+
+        <!-- section introduction -->
+        <section id="introduction" class="py-20 bg-[#151515] rounded-2xl border border-[#2b2b2b] overflow-hidden mt-20">
+            <div class="flex flex-col md:flex-row items-center md:items-center">
+
+                <!-- Logo -->
+                <div class="w-full md:w-1/2 flex justify-center md:justify-center p-8 md:p-16">
+                    <img src="images/logo.png" alt="Logo de Logan Gaumond" class="w-52 sm:w-64 md:w-80 object-contain">
+                </div>
+                <div class="hidden md:block w-0.5 h-64 bg-[#2b2b2b] rounded-full"></div>
+
+                <!-- Texte -->
+                <div class="w-full md:w-1/2 p-8 md:p-16 space-y-6 md:space-y-8">
+                    <h2 class="text-4xl font-bold text-[#9b5de5]">À propos de moi</h2>
+
+                    <p class="text-[#d9d9d9] leading-relaxed text-lg">
+                        Je suis avant tout développeur web, spécialisé dans la création de sites efficaces, utilitaires et bien structurés. J’accorde une grande importance à la clarté, à la fluidité et à la performance, afin que chaque projet soit simple à utiliser autant qu’à maintenir.
+                    </p>
+
+                    <p class="text-[#d9d9d9] leading-relaxed text-lg">
+                        Même si mon travail repose principalement sur la programmation, je possède aussi de bonnes compétences en design web. Je suis également adepte de création graphique animée, ce qui me permet de créer des animations informatives et tout autre projet de ce type.
+                    </p>
+
+                    <p class="text-[#d9d9d9] leading-relaxed text-lg">
+                        Je nourris aussi une passion de longue date pour le développement de jeux vidéo, une passion qui m’accompagne depuis que je suis tout petit. Ce domaine m’a poussé à expérimenter, à apprendre par moi-même et à explorer différentes approches créatives et techniques au fil des années.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Séparateur -->
+        <div class="w-full h-0.5 bg-[#555] opacity-50"></div>
+
+
+        <!-- section projets -->
+        <section id="projectsList" class="py-24">
+            <h2 class="text-4xl text-center mb-12 text-[#9b5de5] font-bold">Mes projets</h2>
+
+            <div class="flex justify-center mt-10">
+                <a href="projets.html" class="px-6 py-3 bg-[#9b5de5] hover:bg-white hover:text-[#9b5de5] transition font-semibold rounded-md">
+                    Consulter toute ma liste de projets
+                </a>
+            </div>
+        </section>
+
+        <!-- Séparateur -->
+        <div class="w-full h-0.5 bg-[#555] opacity-50"></div>
+
+
+        <!-- section contact -->
+        <section id="contact" class="py-24 bg-[#151515] rounded-xl border border-[#2b2b2b]">
+            <h2 class="text-4xl text-center text-[#9b5de5] mb-8 font-bold">Me contacter</h2>
+
+            <div class="text-center text-[#d9d9d9] space-y-4 text-lg">
+                <p>Pour toutes requêtes professionnel vous pouvez me contacter avec les adresse ci-dessous.</p>
+
+                <p class="text-xl font-semibold">
+                    Email : <a href="mailto:gaumondlpro@gmail.com" class="underline hover:text-[#9b5de5]">gaumondlpro@gmail.com</a>
+                </p>
+
+                <p class="text-xl font-semibold">
+                    LinkedIn : <a href="#" class="underline hover:text-[#9b5de5]">Logan Gaumond</a>
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="py-10 text-center text-gray-500">
+        © 2025 - Logan Gaumond. Tous droits réservés.
+    </footer>
+
+</body>
+</html>

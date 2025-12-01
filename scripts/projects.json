@@ -1,0 +1,45 @@
+[
+  {
+    "id": "SmokingSnakes",
+    "title": "Rapiècage de plusieurs extraits vidéo sur un fond musicale",
+    "category": "audiovisuel",
+    "description": "Un projet rapide, un rapièçage, réalisé sur la musique Smoking Snakes du groupe Sabaton. Bien qu'il s'agisse d'un projet visuelle simple, j'ai choisi de l'inclure dans mon portfolio comme témoignage de l'ensemble de mes travaux",
+    "year": 2024,
+    "role": "Monteur de la vidéo",
+    "cover": "images/projets/audiovisuel/smokingSnakes/cover.png",
+    "media": [
+      "images/projets/audiovisuel/smokingSnakes/video.mp4"
+    ],
+    "link": null
+  },
+  {
+    "id": "Geek&Go",
+    "title": "Geek&Go",
+    "category": "design",
+    "description": "Pour un projet de mon cours de Design d'Interface, j'ai dû créer le design de la page d'accueil, la page d'article et la version mobile. J'ai choisi de concevoir le site web d'une marque hypothétique que j'ai appelée Geek&Go. J'ai opté pour un design moderne et stylisé afin de lui donner une identité visuelle unique et marquante.",
+    "year": 2025,
+    "role": "Designer et seul membre du projet",
+    "cover": "images/projets/design/Design_site_magasin/cover.png",
+    "media": [
+      "images/projets/design/Design_site_magasin/image1.png",
+      "images/projets/design/Design_site_magasin/image2.png",
+      "images/projets/design/Design_site_magasin/image3.png"
+    ],
+    "link": "https://www.figma.com/design/9M88RRF758nOmItF51SXUB/Design-de-site-commercial-fictif?node-id=0-1&t=nwWEL25yhxI8rZ4Y-1"
+  },
+  {
+    "id": "BorneTouristique",
+    "title": "Borne touristique pour le village de St-Félicité (En production)",
+    "category": "programmation",
+    "description": "Une production d'une borne touristique en équipe pour le village de St-Félicité pendant mon cours de projet 4. En cours développement. Mon équipe: Émile Lefrançois, Jayden Labelle et Patsha Rosay",
+    "year": 2025,
+    "role": "Programmeur avec Émile Lefrançois",
+    "cover": "images/projets/programmation/borneTouristique/cover.png",
+    "media": [
+      "images/projets/programmation/borneTouristique/image1.png",
+      "images/projets/programmation/borneTouristique/image2.png",
+      "images/projets/programmation/borneTouristique/image3.png"
+    ],
+    "link": null
+  }
+]
