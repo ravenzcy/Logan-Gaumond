@@ -18,13 +18,6 @@ let currentIndex = 0;
 let currentMedia = [];
 
 function closeModal() {
-    // Stopper les vidéos auto-hébergées
-    const videos = carouselInner.querySelectorAll("video");
-    videos.forEach(video => {
-        video.pause();
-        video.currentTime = 0;
-    });
-
     // Stopper les vidéos YouTube/iFrame en rechargeant la source
     const iframes = carouselInner.querySelectorAll("iframe");
     iframes.forEach(iframe => {
@@ -86,15 +79,18 @@ function openModal(project) {
     }
 
     carouselInner.innerHTML = "";
+    
     currentMedia = project.media.map(item => {
         let element;
+        
         if (item.includes("youtube.com/embed/")) {
             element = document.createElement("iframe");
             element.src = item;
             element.setAttribute("frameborder", "0");
             element.setAttribute("allowfullscreen", true);
-            element.className = "carousel-media w-full h-96";
-        } else {
+            element.className = "carousel-media w-full h-96"; 
+        } 
+        else {
             element = document.createElement("img");
             element.src = item;
             element.className = "carousel-media";
@@ -105,8 +101,8 @@ function openModal(project) {
     currentIndex = 0;
     showMedia(currentIndex);
 
-    // Vérifie si le média actuel est une vidéo
-    if (currentMedia[currentIndex].tagName === "VIDEO") {
+    // Vérifie si le média actuel est un IFRAME pour cacher les flèches
+    if (currentMedia[currentIndex].tagName === "IFRAME") {
         prevBtn.style.display = "none";
         nextBtn.style.display = "none";
     } else {
@@ -117,12 +113,12 @@ function openModal(project) {
     modal.classList.remove("hidden");
 }
 
+
 function showMedia(index) {
     carouselInner.innerHTML = "";
     carouselInner.appendChild(currentMedia[index]);
 
-    // Masque ou affiche les flèches selon le type de média
-    if (currentMedia[index].tagName === "VIDEO") {
+    if (currentMedia[index].tagName === "IFRAME") {
         prevBtn.style.display = "none";
         nextBtn.style.display = "none";
     } else {
@@ -130,7 +126,6 @@ function showMedia(index) {
         nextBtn.style.display = "flex";
     }
 }
-
 prevBtn.addEventListener("click", () => {
     if (currentMedia.length === 0) return;
     currentIndex = (currentIndex - 1 + currentMedia.length) % currentMedia.length;
