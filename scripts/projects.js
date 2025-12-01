@@ -95,15 +95,6 @@ function openModal(project) {
     currentIndex = 0;
     showMedia(currentIndex);
 
-    // Vérifie si le média actuel est un IFRAME pour cacher les flèches
-    if (currentMedia[currentIndex].tagName === "IFRAME") {
-        prevBtn.style.display = "none";
-        nextBtn.style.display = "none";
-    } else {
-        prevBtn.style.display = "flex";
-        nextBtn.style.display = "flex";
-    }
-
     modal.classList.remove("hidden");
 }
 
@@ -132,3 +123,4 @@ nextBtn.addEventListener("click", () => {
     showMedia(currentIndex);
 
 });
+
