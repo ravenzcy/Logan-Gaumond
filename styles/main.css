@@ -120,25 +120,25 @@ html {
 
 #carouselInner {
     width: 100%;
+    height: 80vh;
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    position: relative;
 }
 
-.carousel-media.img,
-.carousel-media.iframe {
-    display: block;
+.carousel-media.img {
     max-height: 70vh;
     max-width: 100%;
-    width: auto;
     object-fit: contain;
-    margin-bottom: 1rem;
 }
 
 .carousel-media.iframe {
+    width: 100%;
     height: 80vh;
     max-height: 90vh;
+    object-fit: contain;
 }
 
 #modalDescription {
@@ -175,5 +175,6 @@ html {
     z-index: 30;
 
 }
+
 
 
