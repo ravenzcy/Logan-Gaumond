@@ -18,13 +18,7 @@ let currentIndex = 0;
 let currentMedia = [];
 
 function closeModal() {
-    // Stopper les vidéos YouTube/iFrame en rechargeant la source
-    const iframes = carouselInner.querySelectorAll("iframe");
-    iframes.forEach(iframe => {
-        // Sauvegarde la source et la réinitialise pour arrêter la lecture
-        const src = iframe.src;
-        iframe.src = src; 
-    });
+    carouselInner.innerHTML = "";
 
     // Cacher le modal
     modal.classList.add("hidden");
@@ -136,4 +130,5 @@ nextBtn.addEventListener("click", () => {
     if (currentMedia.length === 0) return;
     currentIndex = (currentIndex + 1) % currentMedia.length;
     showMedia(currentIndex);
+
 });
