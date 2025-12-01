@@ -71,9 +71,9 @@ function openModal(project) {
     modalRole.textContent = project.role;
 
     // Gestion du lien
-    if (project.link && project.link !== "") {
-        modalLink.href = project.link;
-        modalLink.classList.remove("hidden");
+    if (project.link && project.link !== "" && project.link !== "null") {
+    modalLink.href = project.link;
+    modalLink.classList.remove("hidden");
     } else {
         modalLink.classList.add("hidden");
     }
@@ -129,5 +129,6 @@ nextBtn.addEventListener("click", () => {
     currentIndex = (currentIndex + 1) % currentMedia.length;
     showMedia(currentIndex);
 });
+
 
 
