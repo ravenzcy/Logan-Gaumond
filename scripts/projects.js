@@ -56,7 +56,6 @@ function createProjectCard(project) {
     if (project.category === "audiovisuel") containerAudiovisual.appendChild(card);
 }
 
-// OUVRIR LE MODAL
 function openModal(project) {
     modalTitle.textContent = project.title;
     modalDescription.textContent = project.description;
@@ -66,9 +65,9 @@ function openModal(project) {
     // Gérer le lien du projet
     if (project.link) {
         modalLink.href = project.link;
-        modalLink.classList.remove("hidden");
+        modalLink.style.display = "inline-block";
     } else {
-        modalLink.classList.add("hidden");
+        modalLink.style.display = "none";
     }
 
     // Préparer le carrousel
@@ -81,7 +80,7 @@ function openModal(project) {
             element.src = item;
             element.setAttribute("frameborder", "0");
             element.setAttribute("allowfullscreen", true);
-            element.className = "carousel-media w-full h-96";
+            element.className = "carousel-media w-full h-[500px] sm:h-[600px]";
         } else {
             element = document.createElement("img");
             element.src = item;
@@ -122,4 +121,5 @@ nextBtn.addEventListener("click", () => {
     currentIndex = (currentIndex + 1) % currentMedia.length;
     showMedia(currentIndex);
 });
+
 
